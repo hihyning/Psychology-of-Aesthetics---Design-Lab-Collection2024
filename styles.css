@@ -1,0 +1,259 @@
+:root {
+    --accent-color: rgb(33,33,33);
+    --bg-color: #FFFFFF;
+    --text-color: #111111;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.title {
+    font-family: 'Space Grotesk', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: 2em;
+    color: var(--accent-color);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.title img{
+    height: 1em;
+    margin-right: 0.5%;
+    justify-content: center;
+}
+
+.title img:hover{
+    animation: spin 0.5s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.header {
+    padding: 0.3rem;
+    color: rgb(33,33,33);
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.course-description {
+    width: 40vw;
+    margin-right: 2em;
+}
+
+.title-container {
+    padding: 0 2%;
+}
+
+h1 {
+    font-size: 6.5rem;
+    line-height: 0.8em;
+    letter-spacing: -0.05em;
+    font-family: "Urbanist", sans-serif;
+    font-weight: 400;
+    padding-top: 1rem;
+    text-align: left;
+}
+
+h2 {
+    font-family: "Urbanist", sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    text-align: left;
+    padding-top: 1rem;
+    line-height: 1em;
+}
+
+.course-description {
+    padding: 1.1rem;
+    height: 10vh;
+    background: var(--bg-color);
+}
+
+.course-description h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+    font-size: 2em;
+    font-weight: 400;
+    text-align: left;
+}
+
+.course-description p {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+    font-size: 1.2em;
+    line-height: 1.2;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    color: #444;
+}
+/* Core styles remain the same, updating card-specific styles */
+
+.labs-container {
+    position: relative;
+    width: 100%;
+    height: 67vh;
+    padding-top: 2rem;
+}
+
+.lab-card {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 30vh;
+    background: white;
+    border-top: 3px solid white;
+    padding-top: 1rem;
+    padding-left: 2rem;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+}
+
+/* Stack cards from bottom to top */
+.lab-card:nth-child(1) { /* Lab 1 */
+    bottom: 0;
+    z-index: 1;
+    transform: translateY(-160px);
+    background-color: rgb(255,69,0);
+}
+
+.lab-card:nth-child(2) { /* Lab 2 */
+    bottom: 0;
+    z-index: 2;
+    transform: translateY(-90px);
+    background-color: #1300f1;
+}
+
+.lab-card:nth-child(3) { /* Lab 3 */
+    bottom: 0;
+    z-index: 3;
+    transform: translateY(-20px);
+    background-color: #05f100;
+}
+
+.lab-card:nth-child(4) { /* Final */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    min-height: 15vh;
+    height: 100vh; /* Extend all the way to bottom */
+    transform: translateY(calc(100vh - 23vh)); /* Start positioned with only 30vh showing */
+    padding-bottom: env(safe-area-inset-bottom);
+    background-color: white;
+}
+
+/* Hover states */
+.lab-card:hover {
+    transform: translateY(calc(-7em - 150px)) !important;
+}
+
+.lab-card:nth-child(2):hover {
+    transform: translateY(calc(-7em - 100px)) !important;
+}
+
+.lab-card:nth-child(3):hover {
+    transform: translateY(calc(-7em - 50px)) !important;
+}
+
+.lab-card:nth-child(4):hover {
+    transform: translateY(calc(100vh - 30vh - 10em)) !important;
+}
+
+/* Card content styling */
+.lab-card h3 {
+    font-family: "Urbanist", sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    font-size: 3em;
+    text-align: left;
+    padding-top: 0.5rem;
+    line-height: 1em;
+    color: white;
+}
+
+.lab-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  
+  .lab-card .subtitle {
+    font-family: "Urbanist", sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    text-align: right;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    line-height: 1em;
+    color: white;
+  }
+
+.lab-card .description {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2em;
+    margin-top: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+}
+
+.lab-card .visit-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5em;
+    margin-top: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(0);
+}
+
+.lab-card .visit-text:hover {
+    transform: translateX(50px);
+  }
+
+
+.lab-card:nth-child(1) .visit-text{
+    color: #05f100;
+}
+
+.lab-card:nth-child(2) .visit-text{
+    color: rgb(255,69,0);
+}
+
+.lab-card:nth-child(3) .visit-text{
+    color: #1300f1;
+}
+
+.lab-card:hover .description,
+.lab-card:hover .visit-text {
+    opacity: 1;
+}
