@@ -272,7 +272,7 @@ h2 {
     margin-top: 1rem;
     opacity: 0;
     transition: opacity 0.3s ease;
-    color: rgb(74, 74, 74)
+    color: rgb(74, 74, 74);
 }
 
 .lab-card .visit-text {
