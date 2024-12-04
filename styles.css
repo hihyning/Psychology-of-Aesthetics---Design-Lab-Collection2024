@@ -10,6 +10,14 @@
     box-sizing: border-box;
 }
 
+a {
+    color:rgb(255,69,0);
+}
+
+a:hover{
+    font-style: italic;
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -109,7 +117,6 @@ h2 {
     font-size: 1.2em;
     line-height: 1.2;
     margin-left: 1rem;
-    margin-top: 0.5rem;
     color: #444;
 }
 /* Core styles remain the same, updating card-specific styles */
