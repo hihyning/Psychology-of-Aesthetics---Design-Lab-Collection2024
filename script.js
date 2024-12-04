@@ -18,31 +18,39 @@ const labs = [
         url: "https://hihyning.github.io/Lab-3-Psych-of-Aesthetics/"
     },
     {
-        title: "Final Experiment",
-        subtitle: "Comprehensive Analysis of Design Psychology",
-        description: "Comprehensive Analysis of Design Psychology",
-        url: "https://your-final-url.com"
+        title: "Final. Active Learning",
+        subtitle: "Impact of Active Learning on Incidental Memory",
+        description: "This self-designed experiment explores how active learning through digital interaction affects incidental memory, comparing it to passive observation, by examining participants' ability to recognise visual stimuli in a matching card game.",
+        url: "https://hihyning.github.io/Final-Project-Psych-of-Aesthetics/",
+        extraText: "Click here to read the full report about the experiment design" // Only add to the final card
     }
 ];
 
 function createLabCards() {
-    const container = document.querySelector('.labs-container');
+  const container = document.querySelector('.labs-container');
+  
+  labs.forEach((lab, index) => {
+    const card = document.createElement('div');
+    card.className = 'lab-card';
     
-    labs.forEach(lab => {
-      const card = document.createElement('div');
-      card.className = 'lab-card';
-      card.innerHTML = `
-        <div class="card-header">
-          <h3>${lab.title}</h3>
-          <p class="subtitle">${lab.subtitle}</p>
-        </div>
-        <p class="description">${lab.description}</p>
-        <p class="visit-text">Click to visit experiment →</p>
-      `;
-      
-      card.addEventListener('click', () => window.location.href = lab.url);
-      container.appendChild(card);
-    });
-  }
+    let cardHTML = `
+      <div class="card-header">
+        <h3>${lab.title}</h3>
+        <p class="subtitle">${lab.subtitle}</p>
+      </div>
+      <p class="description">${lab.description}</p>
+      <p class="visit-text">Click to visit experiment →</p>
+    `;
+    
+    // Add the extra text only to the final card (last item in the array)
+    if (lab.extraText && index === labs.length - 1) {
+      cardHTML += `<a href="https://docs.google.com/document/d/1udiVMSEYPCgBUHvXs5k5vGOdynrzfkkOZz7qYZIWB0g/edit?usp=sharing" class="extra-text">${lab.extraText}</a>`;
+    }
+
+    card.innerHTML = cardHTML;
+    card.addEventListener('click', () => window.location.href = lab.url);
+    container.appendChild(card);
+  });
+}
 
 document.addEventListener('DOMContentLoaded', createLabCards);
