@@ -18,7 +18,7 @@ const labs = [
         url: "https://hihyning.github.io/Lab-3-Psych-of-Aesthetics/"
     },
     {
-        title: "Final. Active Learning",
+        title: "Final. Active Learning / COMING SOON",
         subtitle: "Impact of Active Learning on Incidental Memory",
         description: "This self-designed experiment explores how active learning through digital interaction affects incidental memory, comparing it to passive observation, by examining participants' ability to recognise visual stimuli in a matching card game.",
         url: "https://hihyning.github.io/Final-Project-Psych-of-Aesthetics/",
